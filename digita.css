@@ -344,9 +344,9 @@ background-color: var(--primary-color);
     background-position: center center;
 }
 
-/* .img1{
-    animation-delay: 10s;
-} */
+.img1{
+    animation-delay: -1s;
+}
 
 .img2{
     animation-delay: 5s;
@@ -359,16 +359,15 @@ background-color: var(--primary-color);
 @keyframes  animate{
     10%{
         opacity: 1;
+        /* transform: scale(1.1) */
     }
     20%{
-        transform: scale(1.1);
-        /* opacity: 1; */
+        /* transform: scale(1.1); */
+        opacity: 1;
     }
-    /* 30%{
-        opacity: 0;
-    } */
     30%{
-        transform: scale(1.2);
+        transform: scale(1.1);
+        opacity: 1;
     }
 }
 
@@ -394,10 +393,14 @@ background-color: var(--primary-color);
 
 .intro-text .introl{
     /* background: blue; */
+    position: relative;
     flex-direction: column;
     display: flex;
     padding: 2px;
-    /* height: 300px; */
+    /* opacity: 0; */
+    animation: fromUp 7s infinite;
+    transition: 0.7s;
+    /* animation-delay: 2s; */
 }
 .intro-text .introl h2{
     font-size: 90px;
@@ -416,6 +419,13 @@ background-color: var(--primary-color);
 
 }
 
+.create-R{
+    position: relative;
+    animation: fromDown 7s infinite;
+    /* opacity: 0; */
+    transition: 0.7s;
+    /* animation-delay: 2s; */
+}
 
 .create-R button{
     width: 300px;
@@ -439,7 +449,37 @@ background-color: var(--primary-color);
     color: var(--white);
 }
 
+/* --------------- animationsection ---------*/
+@keyframes fromUp {
+    0%{
+        top: -90px;
+        opacity: 0;
+    }
+    10%{
+        opacity: .1;
+        /* top: -10px; */
+    }
+   
+    30%{
+        opacity: 1;
+        top: 0;
+    }
+}
 
+@keyframes fromDown {
+    0%{
+        bottom: -90px;
+        opacity: 0;
+    }
+    10%{
+        opacity: .1;
+        bottom: -20px;
+    }
+    30%{
+        opacity: 1;
+        bottom: 0;
+    }
+}
 
 
 /* media query sections */
@@ -447,7 +487,7 @@ background-color: var(--primary-color);
        
         .intro-text{
             top: 20%;
-            left: 8%;
+            left: 5%;
             gap: 50px;
         }
 
@@ -484,7 +524,7 @@ background-color: var(--primary-color);
         top: 0px;
         left: -500px;
         height: 100vh;
-        width: 40%;
+        width: 45%;
         flex-flow: column;
         justify-content: flex-start;
         align-items: flex-start;

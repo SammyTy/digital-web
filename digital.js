@@ -1,7 +1,8 @@
 const openSlide = document.getElementById('open-menu');
 const closeSlide = document.getElementById('close-btn');
 const navlinks = document.querySelector('.nav-links');
-
+const images = document.querySelectorAll('.images');
+const animation = document.querySelector('.animation-sec')
 
 // toggle menu
 openSlide.addEventListener('click', () => {
@@ -15,22 +16,4 @@ closeSlide.addEventListener('click', () => {
 });
 
 
-// const openMenu = document.querySelector('.open-menu')
-// const closeMenu = document.querySelector('.close-btn')
-// const navlinks = document.querySelector('.nav-links')
 
-
-
-// console.log(navlinks)
-
-// // // ------------- open navigation menu ------//////
-
-// // openMenu.addEventListener('onclick', () => {
-// //     aside.style.visibility = "visible";
-// // })
-
-// // //----- CLOSE SIDEBSR -------//
-
-// // closeMenu.addEventListener('onclick', () => {
-// //     navlinks.style.visibility = "hidden"
-// // })
