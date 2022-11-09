@@ -4,9 +4,11 @@
     --text:          #e9ecef;
     --deep-text:     #212529;
     --search-text:   #ced4da;
+    --light-text:    #505050;
     --icon-bkg:      #212529;
     --hover-color:   #ff4400;  
     --white:        #fff;
+    --background-color: #f3f3f3;
     
 
     /*-------text-color------- */
@@ -36,11 +38,13 @@ body{
     text-decoration: none;
     height: 300vh;
     list-style: none;
-    background: rgb(224, 216, 200);
+    background: var(--background-color);
+    /* background: rgb(224, 216, 200); */
 }
 
 .container{
     display: flex;
+    width: 100vw;
     flex-direction: column;
     padding: 0 2px;
 }
@@ -61,6 +65,7 @@ body{
 
 .container .logo{
 height: 100%;
+width: 230px;
 display: flex;
 justify-content: space-between;
 background-color: var(--primary-color);
@@ -86,7 +91,7 @@ background-color: var(--primary-color);
             
         
 .container .navbar{
-    flex: 4;
+    flex: 3.7;
     display: flex;
     height: 100%;
     background: var(--white);
@@ -245,17 +250,21 @@ background-color: var(--primary-color);
 /* --------input styling */
 .search-bar{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex: 1;
+    /* flex-shrink: 1; */
     height: 100%;
     background: var(--icon-bkg);
-    gap: 1rem;
+    gap: .7rem;
 }
 
 .search-bar .srch{
     position: relative;
     padding: 4px;
+    margin-left: 10px;
+    display: flex;
+
 }
 
 .search-bar .srch input{
@@ -291,8 +300,8 @@ background-color: var(--primary-color);
 }
 
 .note{
-    width: 80px;
-    height: 60px;
+    width: 60px;
+    height: 55px;
     background: var(--icon-bkg);
     text-align: center;
     cursor: pointer;
@@ -305,18 +314,27 @@ background-color: var(--primary-color);
 }
 
 .note i{
-    margin-top: 9px;
+    margin-top: 5px;
     color: var(--white);
-    font-size: 45px;
+    font-size: 44px;
     border-radius: 10px;
 } 
 
-/*-------- section2 styling */
+.light-mode {
+    font-size: 25px;
+    color: var(--white);
+    cursor: pointer;
+    /* margin-left: 6px; */
 
-/* .section2{
+}
+
+/*------------------ section2 styling ------------------------ */
+
+.section2{
     width: 100%;
     display: flex;
-} */
+    /* margin-bottom: 3rem; */
+}
 
 .animation-sec{
     position: relative;
@@ -443,6 +461,14 @@ background-color: var(--primary-color);
     transition: orangered 1s ease-in-out, box-shadow 1s ease-in-out 
     
 }
+.create-R button a{
+    color: var(--dark);
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'open sans';
+    text-decoration: none;
+}
 
 .create-R button:hover{
     box-shadow: inset 320px 0 0 0 orangered;
@@ -482,31 +508,82 @@ background-color: var(--primary-color);
 }
 
 
+/*-------------------- section 3 styling ------------- */
+/*-----------------have got some issue with on the width here-----------*/ */
+
+.section3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #198754;
+    /* overflow: hidden; */
+}
+
+.main-activities{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem 5px 0 9px;
+
+}
+
+.main-activities .activities{
+    /*
+    height: 270px; */
+    width: 390px;
+    outline: 1px solid black;
+    text-align: left;
+}
+
+.icons{
+    position: relative;
+    background: var(--icon-bkg);
+    width: 80px;
+    height: 80px;
+    border: none;
+    margin-bottom: 17px;
+    border-radius: 40px;
+    display: block;
+    transition: .3s;
+}
+
+.icons:hover{
+    background: var(--hover-color);
+}
+
+.activities1{
+    padding: 2.7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.activities1 h3{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.activities1 h3:hover{
+    color: var(--hover-color);
+}
+
+.activities1 p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: var(--light-text);
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 1.8rem;
+}
+
+
+
+
 /* media query sections */
     @media screen and (max-width:1200px){
-       
-        .intro-text{
-            top: 20%;
-            left: 5%;
-            gap: 50px;
-        }
-
-        .intro-text .introl h2{
-            font-size: 60px;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            line-height: normal;
-            padding: 5px;
-
-        }
-
-        .intro-text .introl p{
-            font-size: 20px;
-            font-weight: 600;
-             /* margin-bottom: 1.6rem; */
-            padding: 5px;
-
-        } 
 
         /*--------- the comtainer section -------------*/
     .container .navbar{
@@ -524,7 +601,7 @@ background-color: var(--primary-color);
         top: 0px;
         left: -500px;
         height: 100vh;
-        width: 45%;
+        width: 300px;
         flex-flow: column;
         justify-content: flex-start;
         align-items: flex-start;
@@ -605,11 +682,57 @@ background-color: var(--primary-color);
         display: block;
        }
 
+       /*---------- section2 max width------------ */
+
+    .intro-text{
+        top: 20%;
+        left: 5%;
+        gap: 50px;
+    }
+
+    .intro-text .introl h2{
+        font-size: 60px;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        line-height: normal;
+        padding: 5px;
+
+    }
+
+    .intro-text .introl p{
+        font-size: 20px;
+        font-weight: 600;
+         /* margin-bottom: 1.6rem; */
+        padding: 5px;
+
+    } 
+
+    /*------------ section 3 -----------------*/
+
+    .main-activities{
+        width: 950px;
+        height: 370px;
+    }
+
+}
+
+@media screen and (max-width:1000px){
+    .main-activities{
+       flex-direction: column;
+        background: #dc3545;
+        justify-content: stretch;
+        gap: 30px;
+    }
+
+    .main-activities .activities{
+        width: 660px;
+        /* padding: 10px 4rem; */
+    }
 
 }
 
 /* --------A MEDIA QUERIES SECTION */
-@media screen and (max-width:569px){
+@media screen and (max-width:679px){
 
     .search-bar{
         display: none;
@@ -629,11 +752,11 @@ background-color: var(--primary-color);
         transition: 0.6s;
         }
         
-        .nav-links{
+        /* .nav-links{
             width: 68%;
-        }
+        } */
 
-/* ------------------ sectio 2 ----------- */
+/* ------------------ section 2 ----------- */
 
         .intro-text .introl h2{
             font-size: 40px;
@@ -643,5 +766,16 @@ background-color: var(--primary-color);
             padding: 5px;
 
         }
-        
+
+        /*------------ section 3 ----------------*/
+        .main-activities .activities{
+            width: 500px;
+            /* display: flex; */
+            background: #eb551e;
+            
+        }
+
+        .activities .activities1{
+            padding: 1rem;
+        }
     }
