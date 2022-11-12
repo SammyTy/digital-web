@@ -4,7 +4,7 @@
     --text:          #e9ecef;
     --deep-text:     #212529;
     --search-text:   #ced4da;
-    --light-text:    #505050;
+    --light-text:    #7c7c7c;
     --icon-bkg:      #212529;
     --hover-color:   #ff4400;  
     --white:        #fff;
@@ -18,7 +18,7 @@
     --success:       #198754;
     --warning:       #ffc107;
     --danger:        #dc3545;
-    --light:         #f8f9fa ;
+    --light:         #e4e4e4;
     --dark:          #212529;
     --great:          #0189d2;
 
@@ -37,7 +37,7 @@
 body{
     width: 100%;
     text-decoration: none;
-    height: 500vh;
+    /* height: 500vh; */
     list-style: none;
     background: var(--background-color);
     /* background: rgb(224, 216, 200); */
@@ -47,19 +47,19 @@ body{
     display: flex;
     width: 100vw;
     flex-direction: column;
-    /* padding: 0 2px; */
+    /* padding: 0 8px; */
 }
 
 .container .header{
     position: fixed;
     /* position: relative; */
     top: 0px;
-    width: 100%;
+    width: 100vw;
     height: 90px; 
     display: flex;
     /* // justify-content: space-between; */
     align-items: center;
-    z-index: 90;
+    z-index: 990;
     margin: 0;
     /* padding: 0 2px; */
 }
@@ -100,26 +100,20 @@ background-color: var(--primary-color);
 }
 
 /*-------------- note that the name carries all of the logo */
-/*///////// change the logo2 to side-logo */
-.navbar .side-logo{
-    height: 100%;
+.aside-links .side-logo{
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background: var(--primary-color); */
     display: none;
 }
 
-        
-.side-logo .side-logo2{
-    width: 200px;
-    margin-top: 20px;
-    height: 57px;
-    /* text-align: center; */
+.aside-links .side-logo .side-logo2{
+    text-align: center;
 }
 /* -------------sub-logo2 change to side logo 2 */
 .side-logo2 a{
-    padding: 6px 0;
+    padding: 6px;
     font-weight: 800;
     margin-left: 7px;
     text-align: left;
@@ -137,17 +131,16 @@ background-color: var(--primary-color);
 
 .side-logo .close{
     display: none;
-    margin-right: 20px;
-    /* width: 80px; */
     padding: 5px;
     cursor: pointer;
+    align-items: center;
 }
 .side-logo .close i{
     font-size: 30px;
     color: var(--white);
 
 }
-/* end of side-logo */
+/* end of aside side-logo */
 
 /* start of nav menu */
 .nav-menu{
@@ -176,10 +169,10 @@ background-color: var(--primary-color);
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* transition: 0.7s ease-in-out; */
 }
 
-.nav-links ul{   
+.nav-links ul,
+.aside-links ul{   
     display: flex;
     justify-content: space-between;
     /* flex-shrink: ; */
@@ -187,12 +180,14 @@ background-color: var(--primary-color);
     /* gap: 1.8rem; */
 }
 
-.nav-links ul li{
+.nav-links ul li,
+.aside-links ul li{
     list-style: none;
     padding: 0 0.765rem;
 }
 
-.nav-links ul li a{
+.nav-links ul li a,
+.aside-links ul li a{
     /* display: block; */
     padding: 13px 15px;
     color: var(--deep-text);
@@ -203,8 +198,13 @@ background-color: var(--primary-color);
     transition: 0.5s;
 }
 
-.nav-links ul li a:hover{
+.nav-links ul li a:hover,
+.aside-links ul li a:hover{
     color: var(--hover-color)
+}
+
+.aside-links{
+    display: none;
 }
 
 .container .rounded-btn{ 
@@ -254,10 +254,10 @@ background-color: var(--primary-color);
     justify-content: flex-start;
     align-items: center;
     flex: 1;
-    /* flex-shrink: 1; */
+    flex-shrink: 1;
     height: 100%;
     background: var(--icon-bkg);
-    gap: .7rem;
+    gap: 1.6rem;
 }
 
 .search-bar .srch{
@@ -300,7 +300,7 @@ background-color: var(--primary-color);
     font-size: 20px;
 }
 
-.note{
+/* .note{
     width: 60px;
     height: 55px;
     background: var(--icon-bkg);
@@ -308,20 +308,20 @@ background-color: var(--primary-color);
     cursor: pointer;
     border-radius: 15px;
     transition: 1s;
-}
+} */
 
-.note:hover{
-    background: var(--primary-color);
+.note i:hover{
+    color: var(--primary-color);
 }
 
 .note i{
-    margin-top: 5px;
+    /* margin-top: 5px; */
     color: var(--white);
-    font-size: 44px;
-    border-radius: 10px;
+    font-size: 30px;
 } 
 
-.light-mode {
+.light-mode i{
+    cursor: pointer;
     font-size: 25px;
     color: var(--white);
     cursor: pointer;
@@ -375,6 +375,51 @@ background-color: var(--primary-color);
     animation-delay: 10s;
 }
 
+.animations{
+    position: absolute;
+    top: 130px;
+    left: 120px;
+    animation: toRight  3s infinite;
+    transition: 2s ease-in-out;
+    border-radius: 10px;
+}
+
+.animationBkg{
+    position: absolute;
+    right: 40%;
+    bottom: -150px;
+    background: linear-gradient(rgba(255, 30, 0, 0.4),rgba(255, 30, 0, 0.4));
+    width: 650px;
+    height: 650px;
+    border-radius: 325px;
+    opacity: 0;
+    animation: slider 15s infinite;
+    transition: 1.6s;
+}
+
+.animationBkg1{
+    position: absolute;
+    right: -90px;
+    bottom: -200px;
+    background: linear-gradient(rgba(255, 5, 5, 0.4),rgba(255, 5, 5, 0.4));
+    width: 360px;
+    height: 360px;
+    border-radius: 325px;
+}
+
+@keyframes toRight {
+    0%{
+        left: 120px;
+    }
+    50%{
+        left: 136px;
+    }
+
+    100%{
+        left: 120px;
+    }
+}
+
 @keyframes  animate{
     10%{
         opacity: 1;
@@ -386,6 +431,28 @@ background-color: var(--primary-color);
     }
     30%{
         transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes slider{
+    0%{
+        bottom: -300px;
+        opacity: .3;
+    }
+
+    /* 30%{
+        bottom: -260px;
+        opacity: 1;
+    }
+
+    60%{
+        bottom: -190px;
+        opacity: 1;
+    } */
+
+    100%{
+        bottom: -150px;
         opacity: 1;
     }
 }
@@ -512,26 +579,29 @@ background-color: var(--primary-color);
 /*-------------------- section 3 styling ------------- */
 /*-----------------have got some issue with on the width here-----------*/ */
 
-.section3{
+.section-3{
     display: flex;
     justify-content: center;
     align-items: center;
     /* overflow: hidden; */
+    margin-top: 80px;
+    width: 100%;
 }
 
 .main-activities{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7rem 5px 0 9px;
-    margin-bottom: 120px;
-
+    padding-top: 9px;
+    /* padding: 1rem 5px 0 9px; */
+    /* margin-bottom: 120px; */
+    margin-top: 20px;
 }
 
 .main-activities .activities{
     /*
     height: 270px; */
-    width: 390px;
+    max-width: 390px;
     outline: 1px solid black;
     text-align: left;
 }
@@ -582,12 +652,9 @@ background-color: var(--primary-color);
 }
 
 /*-------------------- section4 ----------------------- */
-
-svg{
-    margin-top: 40px;
-    display: none;
+.section4{
+    background: #ebe9e9;
 }
-
 .about-row{
     display: flex;
     flex-wrap: wrap;
@@ -632,6 +699,15 @@ svg{
 .about-img{
     width: 100%;
     height: 450px;
+    position: relative;
+}
+
+.about-img .opacity{
+    background: linear-gradient(rgba(194, 194, 194, 0.3),rgba(194, 194, 194, 0.));
+    width: 100%;
+    top: 0;
+    position: absolute;
+    height: 100%;
 }
 
 .about-img img{
@@ -812,6 +888,18 @@ svg{
 
 
 /* media query sections */
+
+    @media screen and (max-width:1400px){
+        .search-bar{
+            justify-content: space-around;
+            align-items: center;
+            gap: 1px;
+        }
+
+        .search-bar .srch{
+            display: none;
+        }
+    }
     @media screen and (max-width:1200px){
 
         /*--------- the comtainer section -------------*/
@@ -824,20 +912,30 @@ svg{
             display: block;
         } */
 
-    .nav-links{
+
+        .nav-links{
+            display: none;
+        }
+
+        .navbar{
+            max-width: 900px;
+        }
+
+    .aside-links{
         position: fixed;
-        /* visibility: hidden; */
+        display: block;
         top: 0px;
         left: -500px;
         height: 100vh;
         width: 300px;
         flex-flow: column;
+        z-index: 99999;
         justify-content: flex-start;
         align-items: flex-start;
         background: var(--icon-bkg);
         }
 
-    .nav-links .side-logo{
+    .aside-links .side-logo{
         display: flex;
         width: 98%;
         height: 100px;
@@ -851,9 +949,6 @@ svg{
     .side-logo .side-logo2{
         width: 250px;
         text-align: center;
-        /* justify-content: center;
-        align-items: center;
-        gap: 2px; */
     }               
 
     .side-logo .side-logo2 span a{
@@ -865,30 +960,30 @@ svg{
         display: block;
     }
 
-    .nav-links ul{
+     .aside-links ul{
         flex-direction: column;
         margin-top: 20px;
         width: 98%;
         padding: 0;
         gap: 1.5rem;
             
-    }
+    } 
 
-    .nav-links ul li{
+     .aside-links ul li{
         padding: 0;
-    }
+    } 
 
-    .nav-links ul li a{
+     .aside-links ul li a{
         border-bottom: 1px solid var(--text);
         margin: 0 1rem 0 0.5rem;
         color: var(--text);
         display: block;
         padding: 0.6rem 0;
-    }
+    } 
 
 
-    .nav-links .rounded-btn{
-        /* display: none; */
+    .aside-links .rounded-btn{
+         /* display: none; */
        position: block;
         display: flex;
        justify-content: center;
@@ -901,7 +996,7 @@ svg{
        transition: 0.6s;
        }
 
-    .nav-links .rounded-btn span{
+    .aside-links .rounded-btn span{
         background: none;
         left: 17px;
         width: 1rem;
@@ -938,7 +1033,7 @@ svg{
 
     /*------------ section 3 -----------------*/
     .main-activities .activities{
-        width: 330px;
+        max-width: 320px;
         height: 310px;
     }
 
@@ -953,7 +1048,7 @@ svg{
     }
 
     .main-activities .activities{
-        width: 660px;
+        max-width: 590px;
     }
 
 }
@@ -996,7 +1091,7 @@ svg{
 
         /*------------ section 3 ----------------*/
         .main-activities .activities{
-            width: auto;
+            max-width: 450px;
         }
 
         .activities .activities1{

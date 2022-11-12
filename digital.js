@@ -1,6 +1,6 @@
 const openSlide = document.getElementById('open-menu');
 const closeSlide = document.getElementById('close-btn');
-const navlinks = document.querySelector('.nav-links');
+const navlinks = document.querySelector('.aside-links');
 const images = document.querySelectorAll('.images');
 const animation = document.querySelector('.animation-sec')
 
